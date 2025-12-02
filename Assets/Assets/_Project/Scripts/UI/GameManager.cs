@@ -1,28 +1,43 @@
 using UnityEngine;
-using TMPro; // Needed for UI
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; // Makes it easy to talk to from other scripts
+    public static GameManager Instance;
 
-    public TextMeshProUGUI scoreText; // Drag your UI Text here
-    private int totalPollen = 0;
+    public TextMeshProUGUI scoreText; // Drag UI here
+    public TextMeshProUGUI hiveText;  // NEW: Drag a second UI text here for "Banked" score
+
+    private int carriedPollen = 0;
+    private int bankedPollen = 0;
 
     void Awake()
     {
-        Instance = this; // Sets up the link
+        Instance = this;
     }
 
     public void AddPollen(int amount)
     {
-        totalPollen += amount;
+        carriedPollen += amount;
+        UpdateUI();
+    }
 
-        // Update the screen
+    public void DepositPollen()
+    {
+        if (carriedPollen > 0)
+        {
+            bankedPollen += carriedPollen;
+            Debug.Log("Deposited " + carriedPollen + " pollen! Total Banked: " + bankedPollen);
+            carriedPollen = 0; // Empty the bee's pockets
+            UpdateUI();
+        }
+    }
+
+    void UpdateUI()
+    {
         if (scoreText != null)
         {
-            scoreText.text = "POLLEN: " + totalPollen;
+            scoreText.text = "CARRYING: " + carriedPollen + "\nBANKED: " + bankedPollen;
         }
-
-        Debug.Log("Total Pollen: " + totalPollen);
     }
 }
