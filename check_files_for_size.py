@@ -1,3 +1,18 @@
+------------------------------------------------------------------------------
+Script Name: GitHub File Size Checker
+Description: 
+    This script scans the entire project folder to find any files larger than 
+    99MB. This is a safety check because GitHub will reject any push containing 
+    a single file larger than 100MB.
+
+    It automatically ignores system and Unity-generated folders (like 'Library', 
+    'Temp', '.git') to save time and focus only on your actual Assets.
+
+Usage: 
+    Run this script before making a commit if you have added large assets 
+    (like high-res textures, videos, or large models) to ensure they are safe 
+    to upload.
+------------------------------------------------------------------------------
 import os
 
 # GitHub's limit is 100MB. We warn at 99MB to be safe.
