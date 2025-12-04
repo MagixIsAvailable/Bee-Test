@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 8185140554535035433}
   - component: {fileID: 7990714167806160004}
   m_Layer: 0
-  m_Name: Flower_Maker (6)
+  m_Name: Flower_T1_Buttercup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

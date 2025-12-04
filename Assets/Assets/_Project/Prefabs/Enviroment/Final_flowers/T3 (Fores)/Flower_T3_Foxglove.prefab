@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 5999528796204111317}
   - component: {fileID: 643332157349166847}
   m_Layer: 0
-  m_Name: Flower_Maker (8)
+  m_Name: Flower_T3_Foxglove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
