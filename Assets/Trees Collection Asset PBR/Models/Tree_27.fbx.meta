@@ -1,9 +1,26 @@
 fileFormatVersion: 2
 guid: b31ad30427e228e4d82d3a6236cc8651
+AssetOrigin:
+  serializedVersion: 1
+  productId: 241435
+  packageName: Trees Collection Asset PBR
+  packageVersion: 1.0
+  assetPath: Assets/Trees Collection Asset PBR/Models/Tree_27.fbx
+  uploadId: 557161
 ModelImporter:
-  serializedVersion: 22103
+  serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Optimized_Bark_Material
+    second: {fileID: 2100000, guid: e69e15a28a611c2409645f9cf54de71c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Optimized_Leaf_Material
+    second: {fileID: 2100000, guid: 8183ced953e90f04eac9f79c30488b90, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -16,8 +33,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -40,6 +55,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -106,10 +122,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 241435
-  packageName: Trees Collection Asset PBR
-  packageVersion: 1.0
-  assetPath: Assets/Trees Collection Asset PBR/Models/Tree_27.fbx
-  uploadId: 557161
