@@ -23,3 +23,30 @@ public class GameOverManager : MonoBehaviour
         "Honey never spoils; 3,000-year-old honey is still edible!",
         "Male bees (drones) have no stingers and do no work."
     };
+
+    public void TriggerGameOver()
+    {
+        // 1. Show Cursor so player can click
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // 2. Pause the game physics
+        Time.timeScale = 0f;
+
+        // 3. Pick a random fact
+        string randomFact = beeFacts[Random.Range(0, beeFacts.Length)];
+        if (factText != null) factText.text = "\"" + randomFact + "\"";
+
+        // 4. Show Screen
+        gameOverPanel.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        // Unpause time
+        Time.timeScale = 1f;
+
+        // Reload the current level (SampleScene or MainLevel)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+}
