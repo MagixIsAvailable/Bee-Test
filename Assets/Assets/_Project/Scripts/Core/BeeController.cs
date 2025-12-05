@@ -45,6 +45,10 @@ public class BeeController : MonoBehaviour
 
           Cursor.lockState = CursorLockMode.Locked;
           Cursor.visible = false;
+
+          // Bee #2 might be slightly fatter or smaller!
+          float randomSize = Random.Range(0.45f, 0.55f);
+          transform.localScale = new Vector3(randomSize, randomSize, randomSize);
      }
 
      void Update()
