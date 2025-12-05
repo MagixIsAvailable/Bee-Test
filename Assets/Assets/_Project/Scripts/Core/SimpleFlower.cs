@@ -38,7 +38,7 @@ public class SimpleFlower : MonoBehaviour
 
             // 5. Destroy/Hide
             // If it's a flower, hide it. If it's a pond, maybe don't hide it?
-            // For now, let's disable it so you can't collect it infinite times instantly.
+            // For simplicity, we hide it here. You can customize per object in Inspector.
             gameObject.SetActive(false);
         }
     }

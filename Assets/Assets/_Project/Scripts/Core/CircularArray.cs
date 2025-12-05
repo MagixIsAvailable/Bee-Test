@@ -1,3 +1,6 @@
+
+
+// this script spawns objects (like flower petals or quads) in a circular pattern around the GameObject it is attached to.
 using UnityEngine;
 
 public class CircularArray : MonoBehaviour
@@ -45,7 +48,7 @@ public class CircularArray : MonoBehaviour
             if (radius == 0)
             {
                 // FLOWER MESH MODE: Rotate in place (Star shape)
-                // We add 'rotationOffset' so you can tweak the starting angle
+                // Set rotation based on angle + offset
                 newObj.transform.rotation = Quaternion.Euler(0, angle + rotationOffset, 0);
             }
             else if (alignToCenter)
