@@ -1,34 +1,119 @@
-name: 🎮 Playtest Feedback
-description: Submit feedback after playing The Bee
-title: "[Feedback]: "
+name: 🎮 Playtest Feedback Form
+description: Please fill this out after playing The Bee (5-10 mins)
+title: "[Playtest]: Feedback from [USER]"
 labels: ["playtest-feedback"]
+assignees: []
 body:
   - type: markdown
     attributes:
-      value: "### Thank you for testing The Bee! 🐝"
-  - type: dropdown
-    id: stamina_difficulty
+      value: |
+        # 🐝 Welcome, Tester!
+        Thank you for testing **The Bee**. This is a short vertical slice of a rogue-lite flight simulator.
+        
+        **Please play for 5-10 minutes and answer honestly.** Your feedback is critical for my university submission!
+
+  - type: markdown
     attributes:
-      label: How hard was the Stamina Mechanic?
+      value: "### Section 1: The Core Loop (Fun & Balance)"
+
+  - type: dropdown
+    id: q1_stamina
+    attributes:
+      label: "Q1: On a scale of 1-5, how easy was it to understand the Stamina (Nectar) mechanic?"
+      description: "Did you know why you couldn't fly up?"
       options:
-        - 1 (Too Easy)
-        - 2 (Just Right)
-        - 3 (Too Hard / Frustrating)
+        - "1 - Very Hard (I kept crashing)"
+        - "2 - Hard"
+        - "3 - Okay"
+        - "4 - Clear"
+        - "5 - Very Easy (I knew exactly when to refuel)"
     validations:
       required: true
+
   - type: dropdown
-    id: performance
+    id: q2_weight
     attributes:
-      label: How was the Performance (FPS)?
+      label: "Q2: Did you notice the bee getting slower as you collected more pollen?"
       options:
-        - Smooth (60+ FPS)
-        - Okay (30-60 FPS)
-        - Choppy / Laggy (<30 FPS)
+        - "Yes, it felt heavy (Good feedback)"
+        - "No, I didn't notice"
+        - "I noticed, but it was annoying/frustrating"
     validations:
       required: true
-  - type: textarea
-    id: bugs
+
+  - type: dropdown
+    id: q3_hive_return
     attributes:
-      label: Did you find any bugs?
-      description: Please describe what happened.
-      placeholder: "I flew into a tree and got stuck..."
+      label: "Q3: Did you manage to find the Hive and deposit your pollen successfully?"
+      options:
+        - "Yes, successful deposit"
+        - "No, I ran out of stamina first"
+        - "No, I couldn't find the Hive"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### Section 2: Navigation & Environment"
+
+  - type: checkboxes
+    id: q4_navigation
+    attributes:
+      label: "Q4: How did you navigate the world? (Select all that apply)"
+      options:
+        - label: "I used the visual landmarks (Rock/Pond)"
+        - label: "I followed the sound of the Hive (Spatial Audio)"
+        - label: "I just flew randomly"
+        - label: "I used the UI Waypoint/Compass (if available)"
+
+  - type: dropdown
+    id: q5_scale
+    attributes:
+      label: "Q5: Did the game world feel 'Big' (like you were a tiny insect)?"
+      options:
+        - "Yes, the scale felt right"
+        - "No, it felt like a normal size world"
+        - "It felt too big / empty"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### Section 3: Accessibility & Controls"
+
+  - type: dropdown
+    id: q6_ui_readability
+    attributes:
+      label: "Q6: Was the UI text (Pollen Counter/Stamina Bar) easy to read against the background?"
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: input
+    id: q6_ui_explain
+    attributes:
+      label: "If you answered 'No' to Q6, please explain:"
+      placeholder: "e.g., The yellow text was hard to see against the sun..."
+
+  - type: dropdown
+    id: q7_motion_sickness
+    attributes:
+      label: "Q7: Did you experience any motion sickness while flying?"
+      options:
+        - "None"
+        - "A little"
+        - "A lot"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### Section 4: Technical & Bugs"
+
+  - type: dropdown
+    id: q9_fps
+    attributes:
+      label: "Q9: What was your average Frame Rate (FPS) feel like?"
+      options:
