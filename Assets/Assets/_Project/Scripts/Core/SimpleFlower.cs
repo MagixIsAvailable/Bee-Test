@@ -1,3 +1,7 @@
+/*
+This modular script handles all resource gathering by detecting OnTriggerEnter events when the player flies through a specific collider box. It functions as a universal resource node, allowing the developer to define different values for Pollen (Score), Nectar (Stamina), and Water in the Inspector, meaning a single script can power flowers, puddles, or hidden items. Upon triggering, it instantiates visual feedback (Particle Systems), plays a 3D spatial sound effect, updates the GameManager, and then disables itself to prevent infinite collection. This design keeps resource collection logic centralized and easily adjustable for various in-game objects.
+*/
+
 using UnityEngine;
 
 public class SimpleFlower : MonoBehaviour
