@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.18, y: 1.204, z: -3.754}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7228102744858836503}
   - {fileID: 505564415006793444}
@@ -92,8 +92,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenFxPrefab: {fileID: 5405511170151913507, guid: 766fc715a1897e242bb1d5725b04cd6c, type: 3}
+  respawnTime: 60
+  destroyPermanently: 0
+  collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
+  pollenValue: 3
+  nectarValue: 5
+  waterValue: 2
 --- !u!1 &2244323933726013277
 GameObject:
   m_ObjectHideFlags: 0
