@@ -1,3 +1,8 @@
+/* 
+This script creates a smooth third-person camera system that tracks the player without being strictly parented to the bee's rotation. By separating the camera from the Rigidbody, it prevents the nauseating "spinning world" effect when the bee turns. It calculates a target position behind and above the player, using Vector3.Lerp or smooth damping to follow the movement while allowing the player to look around freely using mouse input, essential for navigating the complex 3D environment.
+*/
+
+
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
