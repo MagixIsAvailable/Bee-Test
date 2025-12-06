@@ -1,40 +1,49 @@
 /*
-This modular script handles all resource gathering by detecting OnTriggerEnter events when the player flies through a specific collider box. It functions as a universal resource node, allowing the developer to define different values for Pollen (Score), Nectar (Stamina), and Water in the Inspector, meaning a single script can power flowers, puddles, or hidden items. Upon triggering, it instantiates visual feedback (Particle Systems), plays a 3D spatial sound effect, updates the GameManager, and then disables itself to prevent infinite collection. This design keeps resource collection logic centralized and easily adjustable for various in-game objects.
+This modular script handles all resource gathering interactions via OnTriggerEnter events. It functions as a universal resource node, allowing the developer to define specific values for Pollen (Score), Nectar (Stamina), and Water directly in the Inspector. The script manages the object's lifecycle through a flexible state system: it supports single-use items (permanently destroyed), renewable resources (respawning via Coroutines after a set duration), and infinite sources (like water puddles) that remain active with a short cooldown. Upon interaction, it instantiates particle effects, triggers spatial audio, and synchronizes data with the global GameManager
 */
 
 using UnityEngine;
+using System.Collections; // Required for timers (Coroutines)
 
 public class SimpleFlower : MonoBehaviour
 {
-    [Header("Behavior")]
-    public bool isOneTimeUse = true; // CHECK for Flowers, UNCHECK for Water
+    [Header("Respawn Settings")]
+    public float respawnTime = 60f; // Time in seconds (60 = 1 min). Set to 0 for Puddles.
+    public bool destroyPermanently = false; // Check this for "One Time Only" items
 
     [Header("Visuals & Audio")]
-    public GameObject collectFxPrefab; // Pollen=Yellow, Water=Blue
-    public AudioClip collectSound;     // Chime=Flower, Splash=Water
+    public GameObject collectFxPrefab;
+    public AudioClip collectSound;
 
     [Header("Resource Values")]
-    public int pollenValue = 1;        // Score
-    public float nectarValue = 20f;    // Stamina
-    public int waterValue = 0;         // Water Count
+    public int pollenValue = 1;
+    public float nectarValue = 20f;
+    public int waterValue = 0;
 
-    // Cooldown to prevent deafening audio if you sit in the puddle
+    // Internal tracking
+    private Collider myCollider;
+    private Renderer[] myRenderers; // Finds visuals even in child objects
     private float lastCollectTime;
-    private float cooldown = 1.0f;
+    private float puddleCooldown = 1.0f; // Prevents puddles spamming sound
+
+    void Start()
+    {
+        myCollider = GetComponent<Collider>();
+        // Grab all renderers (including the flower petals inside)
+        myRenderers = GetComponentsInChildren<Renderer>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check Cooldown (Only matters for infinite sources)
-        if (Time.time < lastCollectTime + cooldown) return;
+        // 1. Puddle Cooldown Check (Only matters if respawnTime is 0)
+        if (respawnTime == 0 && Time.time < lastCollectTime + puddleCooldown) return;
 
         if (other.CompareTag("Player"))
         {
             lastCollectTime = Time.time;
 
-            // 1. Play Sound
+            // 2. Play Feedback
             if (collectSound != null) AudioSource.PlayClipAtPoint(collectSound, transform.position);
-
-            // 2. Spawn FX
             if (collectFxPrefab != null) Instantiate(collectFxPrefab, transform.position, Quaternion.identity);
 
             // 3. Add Resources
@@ -51,16 +60,33 @@ public class SimpleFlower : MonoBehaviour
                 if (bee != null) bee.RestoreStamina(nectarValue);
             }
 
-            // 5. The "Puddle" Logic
-            if (isOneTimeUse)
+            // 5. Handle Disappearing / Respawning
+            if (destroyPermanently)
             {
-                gameObject.SetActive(false); // Destroy flower
+                gameObject.SetActive(false); // Gone forever
             }
-            else
+            else if (respawnTime > 0)
             {
-                // Do nothing! The puddle stays there.
-                // The 'cooldown' prevents spamming it 100 times a second.
+                StartCoroutine(RespawnRoutine()); // Start the timer
             }
+            // If respawnTime is 0 (Puddle), do nothing, just stay there.
         }
+    }
+
+    // The Timer Logic
+    IEnumerator RespawnRoutine()
+    {
+        // A. Turn off Visuals and Collision (Poof!)
+        if (myCollider) myCollider.enabled = false;
+        foreach (var r in myRenderers) r.enabled = false;
+
+        // B. Wait for X seconds
+        yield return new WaitForSeconds(respawnTime);
+
+        // C. Turn them back on (Respawn!)
+        if (myCollider) myCollider.enabled = true;
+        foreach (var r in myRenderers) r.enabled = true;
+
+        // Optional: Play a tiny "Pop" sound or effect here if you want!
     }
 }
