@@ -1,3 +1,9 @@
+/*
+This script acts as the central character controller, utilizing Unity’s Rigidbody physics engine to simulate realistic insect flight. It processes user input (WASD, Space, Shift) to apply forces for movement, lift, and rotation, while calculating drag and angular damping to create air resistance rather than instant arcade movement. The script also manages the player's vital states by dynamically adjusting mass and drag based on the pollen load (encumbrance), draining stamina during boosts, and modulating the pitch of the engine audio loop based on speed. Additionally, it interfaces with UI elements to display stamina levels and communicates with other game systems like nectar collection and game over conditions.
+*/
+
+
+
 using UnityEngine;
 using UnityEngine.UI; // Required for Slider
 
