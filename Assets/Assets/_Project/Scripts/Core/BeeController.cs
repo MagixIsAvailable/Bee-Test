@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI; // Required for Slider
-
+public GameOverManager GameOverManager;
 [RequireComponent(typeof(Rigidbody))]
 public class BeeController : MonoBehaviour
 {
