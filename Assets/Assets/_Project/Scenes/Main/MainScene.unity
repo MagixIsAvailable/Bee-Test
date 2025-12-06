@@ -360,6 +360,116 @@ Transform:
   - {fileID: 357780718}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -47.84, z: 0}
+--- !u!1 &232315059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232315063}
+  - component: {fileID: 232315062}
+  - component: {fileID: 232315061}
+  - component: {fileID: 232315060}
+  m_Layer: 0
+  m_Name: PuddleObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &232315060
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232315059}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &232315061
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232315059}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2d3d7441a87d3b641a765314c68755c6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &232315062
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232315059}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &232315063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232315059}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.77, y: -30.89, z: 36.91}
+  m_LocalScale: {x: 21.3, y: 0.21299998, z: 21.3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &295021129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,8 +733,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenFxPrefab: {fileID: 5405511170151913507, guid: 766fc715a1897e242bb1d5725b04cd6c, type: 3}
+  collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
+  pollenValue: 1
+  nectarValue: 20
+  waterValue: 0
 --- !u!65 &357780720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -867,8 +980,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenFxPrefab: {fileID: 5405511170151913507, guid: 766fc715a1897e242bb1d5725b04cd6c, type: 3}
+  collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
+  pollenValue: 1
+  nectarValue: 20
+  waterValue: 0
 --- !u!65 &627993833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1105,8 +1221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenFxPrefab: {fileID: 5405511170151913507, guid: 766fc715a1897e242bb1d5725b04cd6c, type: 3}
+  collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
+  pollenValue: 1
+  nectarValue: 20
+  waterValue: 0
 --- !u!65 &839199854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1364,8 +1483,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenFxPrefab: {fileID: 5405511170151913507, guid: 766fc715a1897e242bb1d5725b04cd6c, type: 3}
+  collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
+  pollenValue: 1
+  nectarValue: 20
+  waterValue: 0
 --- !u!65 &1027488520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1716,8 +1838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenFxPrefab: {fileID: 5405511170151913507, guid: 766fc715a1897e242bb1d5725b04cd6c, type: 3}
+  collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
+  pollenValue: 1
+  nectarValue: 20
+  waterValue: 0
 --- !u!1 &1272588991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,8 +1999,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenFxPrefab: {fileID: 5405511170151913507, guid: 766fc715a1897e242bb1d5725b04cd6c, type: 3}
+  collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
+  pollenValue: 1
+  nectarValue: 20
+  waterValue: 0
 --- !u!65 &1307587582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2368,10 +2496,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73137bdd7664bbe40b2a477efcac9146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverManager: {fileID: 0}
   flySpeed: 8
   boostMultiplier: 2
   rotationSpeed: 3
   hoverStrength: 5
+  maxStamina: 100
+  currentStamina: 0
+  staminaDrainRate: 5
+  boostDrainMultiplier: 2
+  staminaSlider: {fileID: 0}
   cameraTransform: {fileID: 330585546}
   flightAudio: {fileID: 1782841850}
   minPitch: 0.8
@@ -2627,6 +2761,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 186943905}
   hiveText: {fileID: 0}
+  maxPollenCapacity: 10
+  playerBee: {fileID: 0}
 --- !u!4 &2077456043
 Transform:
   m_ObjectHideFlags: 0
@@ -2689,8 +2825,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenFxPrefab: {fileID: 5405511170151913507, guid: 766fc715a1897e242bb1d5725b04cd6c, type: 3}
+  collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
+  pollenValue: 1
+  nectarValue: 20
+  waterValue: 0
 --- !u!65 &2116464190
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4135,3 +4274,4 @@ SceneRoots:
   - {fileID: 883726684953499346}
   - {fileID: 2486554171384961380}
   - {fileID: 231912279}
+  - {fileID: 232315063}
