@@ -1,6 +1,11 @@
 
 
-// this script spawns objects (like flower petals or quads) in a circular pattern around the GameObject it is attached to.
+/*
+This utility script automates the creation of "Cross-Quad" flower meshes to solve the issue of 2D textures looking invisible from the side. It instantiates multiple copies of a flat 2D quad and rotates them around a central pivot (e.g., at 0, 60, and 120 degrees) to create a faux-3D volume. This optimization technique allows the game to render hundreds of detailed flowers using simple 2D textures without the performance cost of high-poly 3D models.
+*/
+
+
+
 using UnityEngine;
 
 public class CircularArray : MonoBehaviour
