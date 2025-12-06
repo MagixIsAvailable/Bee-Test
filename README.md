@@ -5,6 +5,13 @@
 
 ---
 
+### 🎮 Help Me Test!
+Click the button below to submit your feedback. It goes directly to a form (no account setup needed if you have GitHub).
+
+[![Submit Feedback](https://img.shields.io/badge/📝_Submit_Feedback-Click_Here-success?style=for-the-badge&logo=github)](https://github.com/MagixIsAvailable/Bee-Test/issues/new?template=playtest_feedback.yml)
+
+---
+
 ## 🎮 Gameplay Overview
 **Survive the Meadow. Fill the Hive.**
 
@@ -43,7 +50,7 @@ Take flight as a tiny bee in a massive world. The Bee is a relaxing yet strategi
 | **Language** | C# |
 | **Tools** | VS Code |
 
----
+
 
 ### 📊 Live Feedback Stats
 ![Feedback Count](https://img.shields.io/github/issues-search/MagixIsAvailable/Bee-Test?query=label%3Aplaytest-feedback&label=Total%20Playtests&color=orange)
