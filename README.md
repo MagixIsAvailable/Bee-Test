@@ -36,3 +36,6 @@ Manage Your Fuel: Nectar is your stamina. Run out, and you're grounded.
 Macro World: Experience the world from a bug's eye view with immersive depth-of-field visuals and spatial sound.
 
 Recommendation: I suggest using Option 2 for your assignment submission. It clearly lists the "Technical Features" (Physics, Audio, Systems) which helps the marker see exactly what you achieved at a glance.
+### 📊 Live Feedback Stats
+![Feedback Count](https://img.shields.io/github/issues-search/MagixIsAvailable/Bee-Test?query=label%3Aplaytest-feedback&label=Total%20Playtests&color=orange)
+![Bugs Reported](https://img.shields.io/github/issues-search/MagixIsAvailable/Bee-Test?query=label%3Abug&label=Bugs%20Found&color=red)
