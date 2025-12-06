@@ -1,3 +1,7 @@
+/*
+The Game Manager serves as the project's Singleton, acting as a global bridge between the UI, the Player, and game world events. It tracks persistent variables such as carriedPollen, bankedScore, and collectedWater, ensuring that game states are preserved across different interactions. It creates the core "Rogue-lite" loop by enforcing a Max Capacity limit, triggering weight penalties on the player when inventory fills, and handling the "Deposit" logic that resets these variables when the player successfully returns to the hive. Additionally, it updates the UI elements in real-time to reflect the player's current status, providing immediate feedback on their progress and encouraging strategic gameplay.
+*/
+
 using UnityEngine;
 using TMPro;           // Required for TextMeshProUGUI
 
