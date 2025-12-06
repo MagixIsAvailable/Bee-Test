@@ -50,8 +50,27 @@ Take flight as a tiny bee in a massive world. The Bee is a relaxing yet strategi
 | **Language** | C# |
 | **Tools** | VS Code |
 
+---
 
+## 🔮 Roadmap & Voting
+We are planning the next major update for **The Bee**! We have categorized potential features by difficulty (Story Points).
+
+| Difficulty | Feature Idea | Description |
+| :--- | :--- | :--- |
+| 🟢 **Easy** | **UV Vision** | See the world like a bee (Purple/Blue filter). |
+| 🟢 **Easy** | **Photo Mode** | Freeze time to take macro screenshots. |
+| 🟡 **Medium** | **Dynamic Weather** | Random rain (drains stamina) and wind events. |
+| 🟡 **Medium** | **Hive Upgrades** | Spend pollen to buy speed/stamina boosts. |
+| 🔴 **Hard** | **Predators** | Avoid the Hornet AI patrolling the forest. |
+
+### 🗳️ Cast Your Vote!
+Click the button below to visit our Community Poll and react with an emoji for the feature you want most.
+
+[![Vote Now](https://img.shields.io/badge/🗳️_Vote_For_Features-Join_Discussion-blueviolet?style=for-the-badge&logo=github)](https://github.com/MagixIsAvailable/Bee-Test/discussions/1)
+
+---
 
 ### 📊 Live Feedback Stats
 ![Feedback Count](https://img.shields.io/github/issues-search/MagixIsAvailable/Bee-Test?query=label%3Aplaytest-feedback&label=Total%20Playtests&color=orange)
 ![Bugs Reported](https://img.shields.io/github/issues-search/MagixIsAvailable/Bee-Test?query=label%3Abug&label=Bugs%20Found&color=red)
+
