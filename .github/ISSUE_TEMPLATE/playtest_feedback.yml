@@ -1,0 +1,34 @@
+name: 🎮 Playtest Feedback
+description: Submit feedback after playing The Bee
+title: "[Feedback]: "
+labels: ["playtest-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: "### Thank you for testing The Bee! 🐝"
+  - type: dropdown
+    id: stamina_difficulty
+    attributes:
+      label: How hard was the Stamina Mechanic?
+      options:
+        - 1 (Too Easy)
+        - 2 (Just Right)
+        - 3 (Too Hard / Frustrating)
+    validations:
+      required: true
+  - type: dropdown
+    id: performance
+    attributes:
+      label: How was the Performance (FPS)?
+      options:
+        - Smooth (60+ FPS)
+        - Okay (30-60 FPS)
+        - Choppy / Laggy (<30 FPS)
+    validations:
+      required: true
+  - type: textarea
+    id: bugs
+    attributes:
+      label: Did you find any bugs?
+      description: Please describe what happened.
+      placeholder: "I flew into a tree and got stuck..."
