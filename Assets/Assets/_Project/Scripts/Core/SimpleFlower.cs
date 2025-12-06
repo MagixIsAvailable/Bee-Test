@@ -6,31 +6,42 @@ using UnityEngine;
 
 public class SimpleFlower : MonoBehaviour
 {
+    [Header("Behavior")]
+    public bool isOneTimeUse = true; // CHECK for Flowers, UNCHECK for Water
+
     [Header("Visuals & Audio")]
     public GameObject collectFxPrefab; // Pollen=Yellow, Water=Blue
     public AudioClip collectSound;     // Chime=Flower, Splash=Water
 
     [Header("Resource Values")]
-    // Set these in the Inspector for each type!
     public int pollenValue = 1;        // Score
     public float nectarValue = 20f;    // Stamina
-    public int waterValue = 0;         // Water Count (New!)
+    public int waterValue = 0;         // Water Count
+
+    // Cooldown to prevent deafening audio if you sit in the puddle
+    private float lastCollectTime;
+    private float cooldown = 1.0f;
 
     private void OnTriggerEnter(Collider other)
     {
+        // Check Cooldown (Only matters for infinite sources)
+        if (Time.time < lastCollectTime + cooldown) return;
+
         if (other.CompareTag("Player"))
         {
+            lastCollectTime = Time.time;
+
             // 1. Play Sound
             if (collectSound != null) AudioSource.PlayClipAtPoint(collectSound, transform.position);
 
             // 2. Spawn FX
             if (collectFxPrefab != null) Instantiate(collectFxPrefab, transform.position, Quaternion.identity);
 
-            // 3. Add Resources (Only if value > 0)
+            // 3. Add Resources
             if (GameManager.Instance != null)
             {
                 if (pollenValue > 0) GameManager.Instance.AddPollen(pollenValue);
-                if (waterValue > 0) GameManager.Instance.AddWater(waterValue); // You need to add AddWater to Manager
+                if (waterValue > 0) GameManager.Instance.AddWater(waterValue);
             }
 
             // 4. Refill Stamina
@@ -40,10 +51,16 @@ public class SimpleFlower : MonoBehaviour
                 if (bee != null) bee.RestoreStamina(nectarValue);
             }
 
-            // 5. Destroy/Hide
-            // If it's a flower, hide it. If it's a pond, maybe don't hide it?
-            // For simplicity, we hide it here. You can customize per object in Inspector.
-            gameObject.SetActive(false);
+            // 5. The "Puddle" Logic
+            if (isOneTimeUse)
+            {
+                gameObject.SetActive(false); // Destroy flower
+            }
+            else
+            {
+                // Do nothing! The puddle stays there.
+                // The 'cooldown' prevents spamming it 100 times a second.
+            }
         }
     }
 }

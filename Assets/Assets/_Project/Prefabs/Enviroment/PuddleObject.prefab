@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d5b6025fe527a4eb52670b2a7fe028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOneTimeUse: 0
   collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: 1fc26094a8dd37e46aa6a0040aa5f35f, type: 3}
   pollenValue: 0
