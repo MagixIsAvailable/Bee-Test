@@ -1,3 +1,7 @@
+/*
+This script manages the game's fail state, conceptually framed as "Exhaustion" rather than death to fit the serious game theme. Upon triggering (when Stamina reaches zero and the player is grounded), it sets Time.timeScale to zero to freeze the physics simulation and unlocks the cursor for UI interaction. Crucially, it integrates the project's educational goals by randomly selecting a string from a beeFacts array to display on the end screen, turning failure into a learning opportunity before handling the scene reload via SceneManager.
+*/
+
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement; // Needed to reload level

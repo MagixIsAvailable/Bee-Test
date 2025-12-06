@@ -1,3 +1,7 @@
+/* 
+Rather than using rigid invisible walls, this script implements an immersive "soft" boundary using physics forces. It utilizes OnTriggerStay to detect when the player attempts to leave the play area, applying a continuous ForceMode.Acceleration to the bee's Rigidbody that pushes them back toward the map center. This simulates a strong headwind that becomes difficult to fight against, accompanied by a looped wind audio cue, providing organic feedback that guides the player back to the playable zone.
+*/
+
 using UnityEngine;
 
 public class WindBoundry : MonoBehaviour
