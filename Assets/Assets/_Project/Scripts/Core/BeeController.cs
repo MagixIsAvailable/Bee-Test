@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI; // Required for Slider
-public GameOverManager GameOverManager;
+
 [RequireComponent(typeof(Rigidbody))]
 public class BeeController : MonoBehaviour
 {
+     public GameOverManager gameOverManager; // Reference to GameOverManager
+
+
      [Header("Flight Settings")]
      public float flySpeed = 15f;
      public float boostMultiplier = 2f;
