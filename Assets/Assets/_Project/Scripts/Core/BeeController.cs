@@ -1,17 +1,11 @@
-/*
-This script acts as the central character controller, utilizing Unity’s Rigidbody physics engine to simulate realistic insect flight. It processes user input (WASD, Space, Shift) to apply forces for movement, lift, and rotation, while calculating drag and angular damping to create air resistance rather than instant arcade movement. The script also manages the player's vital states by dynamically adjusting mass and drag based on the pollen load (encumbrance), draining stamina during boosts, and modulating the pitch of the engine audio loop based on speed. Additionally, it interfaces with UI elements to display stamina levels and communicates with other game systems like nectar collection and game over conditions.
-*/
-
-
-
 using UnityEngine;
 using UnityEngine.UI; // Required for Slider
 
 [RequireComponent(typeof(Rigidbody))]
 public class BeeController : MonoBehaviour
 {
+     [Header("Game Manager Connection")]
      public GameOverManager gameOverManager; // Reference to GameOverManager
-
 
      [Header("Flight Settings")]
      public float flySpeed = 15f;
@@ -40,6 +34,7 @@ public class BeeController : MonoBehaviour
      private float liftInput;
      private bool isBoosting;
      private float baseFlySpeed;
+     private bool isDead = false; // Prevent multiple game over calls
 
      void Start()
      {
@@ -62,6 +57,8 @@ public class BeeController : MonoBehaviour
 
      void Update()
      {
+          if (isDead) return; // Stop inputs if game over
+
           // 1. Get Input
           horizontalInput = Input.GetAxis("Horizontal");
           verticalInput = Input.GetAxis("Vertical");
@@ -76,12 +73,14 @@ public class BeeController : MonoBehaviour
           // 2. Handle Audio Pitch
           HandleAudio();
 
-          // 3. Handle Stamina Drain
+          // 3. Handle Stamina Drain & Game Over Check
           HandleStamina();
      }
 
      void FixedUpdate()
      {
+          if (isDead) return;
+
           HandleMovement();
           HandleRotation();
           ApplyHoverForce();
@@ -108,15 +107,32 @@ public class BeeController : MonoBehaviour
           {
                staminaSlider.value = currentStamina / maxStamina;
           }
+
+          // ---  GAME OVER LOGIC ---
+          // If out of energy...
+          if (currentStamina <= 0)
+          {
+               // ...and we have hit the ground (stopped moving)
+               if (rb.linearVelocity.magnitude < 0.2f && !isDead)
+               {
+                    Debug.Log("Bee Exhausted. Game Over.");
+                    isDead = true; // Lock controls
+
+                    if (gameOverManager != null)
+                    {
+                         gameOverManager.TriggerGameOver();
+                    }
+               }
+          }
      }
 
      // Called by Flowers to refill energy (Nectar)
      public void RestoreStamina(float amount)
      {
+          if (isDead) return; // Can't drink if dead
+
           currentStamina += amount;
           if (currentStamina > maxStamina) currentStamina = maxStamina;
-
-          Debug.Log("Nectar Sipped! Stamina: " + currentStamina);
      }
 
      void HandleMovement()
