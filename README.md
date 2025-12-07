@@ -48,7 +48,7 @@ Take flight as a tiny bee in a massive world. The Bee is a relaxing yet strategi
 | :--- | :--- |
 | **Engine** | Unity 2022.3 (URP) |
 | **Language** | C# |
-| **Tools** | VS Code |
+| **Tools** | VS Code , Blender 4.5  |
 
 ---
 
