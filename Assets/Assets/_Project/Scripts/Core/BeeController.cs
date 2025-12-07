@@ -1,4 +1,17 @@
-using UnityEngine;
+/*
+This script acts as the central character controller, utilizing Unity’s Rigidbody physics engine to simulate realistic insect flight. It processes user input (WASD, Space, Shift) to apply forces for movement, lift, and rotation, while calculating drag and angular damping to create air resistance rather than instant arcade movement. 
+
+Key features include:
+1. Physics-Based Flight: Manages momentum, drag, and hover mechanics.
+2. Vitality System: Drains stamina based on movement intensity (boost vs. normal) and handles exhaustion logic.
+3. Animation Control: Communicates with the Animator component to toggle the "isFlying" state (TakeOff/Hover/Land) based on the bee's life status.
+4. Game Over Trigger: Detects when the player has run out of energy and crashed (velocity near zero), effectively disabling controls and triggering the Game Over UI.
+5. Audio & UI: Modulates engine pitch based on speed and updates the Stamina Slider in real-time.
+*/
+
+
+
+using UnityEngine;     // Required for Unity components
 using UnityEngine.UI; // Required for Slider
 
 [RequireComponent(typeof(Rigidbody))]
@@ -6,6 +19,9 @@ public class BeeController : MonoBehaviour
 {
      [Header("Game Manager Connection")]
      public GameOverManager gameOverManager; // Reference to GameOverManager
+
+     [Header("Animation Settings")]
+     public Animator beeAnimator; // <--- ANIMATION: Drag your Animator component here!
 
      [Header("Flight Settings")]
      public float flySpeed = 15f;
@@ -53,6 +69,12 @@ public class BeeController : MonoBehaviour
           // Bee #2 might be slightly fatter or smaller!
           float randomSize = Random.Range(0.45f, 0.55f);
           transform.localScale = new Vector3(randomSize, randomSize, randomSize);
+
+          // <--- ANIMATION: Start flapping immediately!
+          if (beeAnimator != null)
+          {
+               beeAnimator.SetBool("isFlying", true);
+          }
      }
 
      void Update()
@@ -108,7 +130,7 @@ public class BeeController : MonoBehaviour
                staminaSlider.value = currentStamina / maxStamina;
           }
 
-          // ---  GAME OVER LOGIC ---
+          // --- GAME OVER LOGIC ---
           // If out of energy...
           if (currentStamina <= 0)
           {
@@ -117,6 +139,12 @@ public class BeeController : MonoBehaviour
                {
                     Debug.Log("Bee Exhausted. Game Over.");
                     isDead = true; // Lock controls
+
+                    // <--- ANIMATION: Stop flapping wings (Switch to Idle/Land)!
+                    if (beeAnimator != null)
+                    {
+                         beeAnimator.SetBool("isFlying", false);
+                    }
 
                     if (gameOverManager != null)
                     {
