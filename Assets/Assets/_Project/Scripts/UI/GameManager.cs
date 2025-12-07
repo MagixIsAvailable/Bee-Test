@@ -12,10 +12,11 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     public TextMeshProUGUI scoreText; // Drag "POLLEN: 0" text here
     public TextMeshProUGUI hiveText;  // Drag "BANKED: 0" text here 
+    public TextMeshProUGUI waterText; // Drag "WATER: 0" text here <--- NEW
 
     [Header("Game Settings")]
     public int maxPollenCapacity = 10;
-    public BeeController playerBee;   // Drag  PlayerBee object here
+    public BeeController playerBee;   // Drag PlayerBee object here
 
     // Tracking variables
     private int carriedPollen = 0;
@@ -44,18 +45,23 @@ public class GameManager : MonoBehaviour
         UpdateBeeWeight();
     }
 
-    public void AddWater(int amount)                                // New method to add water
+    public void AddWater(int amount)
     {
-        collectedWater += amount;                                  // Increase water count
-        Debug.Log("Collected Water: " + collectedWater);          // For debugging
+        collectedWater += amount;
+
+        // Update the Blue Text on Screen
+        if (waterText != null)
+        {
+            waterText.text = "WATER: " + collectedWater;
+        }
     }
 
     public void DepositPollen()
     {
-        if (carriedPollen > 0)                                              // Only deposit if carrying some
+        if (carriedPollen > 0)
         {
-            bankedPollen += carriedPollen;                            // Add to Hive Total
-            Debug.Log("Deposited " + carriedPollen + " pollen!");   // For debugging
+            bankedPollen += carriedPollen;      // Add to Hive Total
+            Debug.Log("Deposited " + carriedPollen + " pollen!");
 
             carriedPollen = 0; // Empty pockets
 
@@ -79,10 +85,9 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "CARRYING: " + carriedPollen + " / " + maxPollenCapacity;  // Update Carrying Text
+            scoreText.text = "CARRYING: " + carriedPollen + " / " + maxPollenCapacity;
         }
 
-        // Update Hive Text
         if (hiveText != null)
         {
             hiveText.text = "HIVE TOTAL: " + bankedPollen;
