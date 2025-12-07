@@ -527,7 +527,7 @@ MonoBehaviour:
   collectFxPrefab: {fileID: 0}
   collectSound: {fileID: 8300000, guid: de16f735a3f81ac46a70c2e8ab8feef1, type: 3}
   pollenValue: 5
-  nectarValue: 5
+  nectarValue: 30
   waterValue: 2
 --- !u!1 &4533854134145329309
 GameObject:
