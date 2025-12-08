@@ -1,5 +1,9 @@
 /*
-The Game Manager serves as the project's Singleton, acting as a global bridge between the UI, the Player, and game world events. It tracks persistent variables such as carriedPollen, bankedScore, and collectedWater, ensuring that game states are preserved across different interactions. It creates the core "Rogue-lite" loop by enforcing a Max Capacity limit, triggering weight penalties on the player when inventory fills, and handling the "Deposit" logic that resets these variables when the player successfully returns to the hive. Additionally, it updates the UI elements in real-time to reflect the player's current status, providing immediate feedback on their progress and encouraging strategic gameplay.
+The Game Manager serves as the project's Singleton, acting as a global bridge between the UI, the Player, and game world events. It tracks persistent variables such as carriedPollen, bankedScore, and collectedWater.
+
+UPDATED FEATURES:
+- Win Condition: Checks if "bankedPollen" exceeds "pollenGoal" to trigger Victory.
+- Rogue-lite Loop: Enforces Max Capacity and Weight Penalties.
 */
 
 using UnityEngine;
@@ -12,7 +16,11 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     public TextMeshProUGUI scoreText; // Drag "POLLEN: 0" text here
     public TextMeshProUGUI hiveText;  // Drag "BANKED: 0" text here 
-    public TextMeshProUGUI waterText; // Drag "WATER: 0" text here <--- NEW
+    public TextMeshProUGUI waterText; // Drag "WATER: 0" text here
+
+    [Header("Win Settings")]
+    public int pollenGoal = 100;      // <--- SET THIS TO 50 or 100 IN INSPECTOR
+    public GameObject winPanel;       // <--- DRAG YOUR NEW "WinPanel" HERE
 
     [Header("Game Settings")]
     public int maxPollenCapacity = 10;
@@ -61,12 +69,36 @@ public class GameManager : MonoBehaviour
         if (carriedPollen > 0)
         {
             bankedPollen += carriedPollen;      // Add to Hive Total
-            Debug.Log("Deposited " + carriedPollen + " pollen!");
+            Debug.Log("Deposited " + carriedPollen + " pollen! Total: " + bankedPollen);
 
             carriedPollen = 0; // Empty pockets
 
             UpdateUI();
             UpdateBeeWeight(); // Reset speed to fast
+
+            // <--- WIN CONDITION CHECK --->
+            if (bankedPollen >= pollenGoal)
+            {
+                WinGame();
+            }
+        }
+    }
+
+    public void WinGame()
+    {
+        Debug.Log("VICTORY! Winter is survivable.");
+
+        // 1. Show Mouse Cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // 2. Freeze Time
+        Time.timeScale = 0f;
+
+        // 3. Show Victory Screen
+        if (winPanel != null)
+        {
+            winPanel.SetActive(true);
         }
     }
 
@@ -90,7 +122,7 @@ public class GameManager : MonoBehaviour
 
         if (hiveText != null)
         {
-            hiveText.text = "HIVE TOTAL: " + bankedPollen;
+            hiveText.text = "HIVE TOTAL: " + bankedPollen + " / " + pollenGoal;
         }
     }
 }
