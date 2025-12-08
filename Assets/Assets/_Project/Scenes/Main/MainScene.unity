@@ -11652,6 +11652,10 @@ PrefabInstance:
       propertyPath: isOneTimeUse
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5432878529069182224, guid: 9929b12c4a082df45b092a26b24214ec, type: 3}
+      propertyPath: collectFxPrefab
+      value: 
+      objectReference: {fileID: 5405511170151913507, guid: 394fb6e48bd185a48b76c534a723823c, type: 3}
     - target: {fileID: 6864524921273191343, guid: 9929b12c4a082df45b092a26b24214ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 83.241875

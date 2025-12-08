@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnTime: 60
   destroyPermanently: 0
-  collectFxPrefab: {fileID: 0}
+  collectFxPrefab: {fileID: 5405511170151913507, guid: 394fb6e48bd185a48b76c534a723823c, type: 3}
   collectSound: {fileID: 8300000, guid: 1fc26094a8dd37e46aa6a0040aa5f35f, type: 3}
   pollenValue: 0
   nectarValue: 25
