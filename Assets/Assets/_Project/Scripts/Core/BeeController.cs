@@ -29,6 +29,11 @@ public class BeeController : MonoBehaviour
      public float rotationSpeed = 3f;
      public float hoverStrength = 5f;
 
+
+     [Header("Win Condition")]
+     public float pollenToWin = 100f; // Amount of pollen needed to win
+     public float currentPollen = 0f; // Current amount of pollen collected
+
      [Header("Stamina Settings")]
      public float maxStamina = 100f;
      public float currentStamina;
