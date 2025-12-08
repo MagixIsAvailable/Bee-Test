@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf06c466b3bab7448126c9d1fbcdd91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 957764366207308995, guid: 9ff6ad63395e38944868cd0db89ff302, type: 3}
+  objectToSpawn: {fileID: 8742208601259483847}
   numberOfObjects: 8
   radius: 0
   alignToCenter: 1
