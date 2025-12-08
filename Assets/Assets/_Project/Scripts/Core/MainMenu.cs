@@ -1,3 +1,5 @@
+// This script manages the main menu functionality, including starting the game and quitting the application.
+
 using UnityEngine;
 using UnityEngine.SceneManagement; // Required for Scene Management
 
