@@ -10,6 +10,8 @@ public class GameOverManager : MonoBehaviour
 {
     [Header("UI Components")]
     public GameObject gameOverPanel;
+
+    public GameObject winPanel;
     public TextMeshProUGUI factText;
 
     [Header("Data")]
