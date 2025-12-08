@@ -53,4 +53,14 @@ public class GameOverManager : MonoBehaviour
         // Reload the current level (SampleScene or MainLevel)
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void QuitGame()
+    {
+        // Unpause time
+        Time.timeScale = 1f;
+
+        // Quit application
+        Debug.Log("Quitting Game...");
+        Application.Quit();
+    }
 }
