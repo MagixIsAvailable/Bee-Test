@@ -94,7 +94,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: GLTF_created_0|take_off_and_land
+      name: take_off_and_land
       takeName: GLTF_created_0|take_off_and_land
       internalID: 9156422226223338442
       firstFrame: 0

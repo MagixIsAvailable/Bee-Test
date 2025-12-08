@@ -12912,7 +12912,7 @@ MonoBehaviour:
   scoreText: {fileID: 186943905}
   hiveText: {fileID: 584090061}
   waterText: {fileID: 1375337606}
-  pollenGoal: 20
+  pollenGoal: 50
   winPanel: {fileID: 146484581}
   maxPollenCapacity: 50
   playerBee: {fileID: 1782841844}
