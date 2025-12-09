@@ -56,17 +56,21 @@ public class GameOverManager : MonoBehaviour
         // 2. Pause the game physics
         Time.timeScale = 0f;
 
-        // 3. Show Win Screen
+        // 3. Pick a random fact
+        string randomFact = beeFacts[Random.Range(0, beeFacts.Length)];
+        if (factText != null) factText.text = "\"" + randomFact + "\"";
+
+        // 4. Show Win Screen
         winPanel.SetActive(true);
 
-        if (winPanel != null) winPanel.SetActive(true); // Show Win Panel
+
     }
     public void RestartGame()
     {
         // Unpause time
         Time.timeScale = 1f;
 
-        // Reload the current level (SampleScene or MainLevel)
+        // Reload the current level 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
