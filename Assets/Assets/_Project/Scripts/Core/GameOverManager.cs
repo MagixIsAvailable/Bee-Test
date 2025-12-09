@@ -4,16 +4,17 @@ This script manages the game's fail state, conceptually framed as "Exhaustion" r
 
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement; // Needed to reload level
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
     [Header("UI Components")]
     public GameObject gameOverPanel;    // Reference to the game over panel
+    public GameObject winPanel;         // Reference to the win panel
 
-    public GameObject winPanel;     // Reference to the win panel
-    public TextMeshProUGUI factText;   // Reference to the fact text UI element
-
+    [Header("Text References")]
+    public TextMeshProUGUI loseFactText;   // <--- Drag Game Over text here
+    public TextMeshProUGUI winFactText;    // <--- NEW: Drag Win Screen text here
 
     [Header("Data")]
     private string[] beeFacts = new string[]
@@ -47,53 +48,49 @@ public class GameOverManager : MonoBehaviour
 
     public void TriggerGameOver()
     {
-        // 1. Show Cursor so player can click
+        // 1. Show Cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // 2. Pause the game physics
+        // 2. Pause physics
         Time.timeScale = 0f;
 
-        // 3. Pick a random fact
+        // 3. Pick random fact for LOSE screen
         string randomFact = beeFacts[Random.Range(0, beeFacts.Length)];
-        if (factText != null) factText.text = "\"" + randomFact + "\"";
+        if (loseFactText != null) loseFactText.text = "\"" + randomFact + "\"";
 
         // 4. Show Screen
-        gameOverPanel.SetActive(true);
+        if (gameOverPanel != null) gameOverPanel.SetActive(true);
     }
+
     public void TriggerWin()
     {
-        // 1. Show Cursor so player can click
+        // 1. Show Cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // 2. Pause the game physics
+        // 2. Pause physics
         Time.timeScale = 0f;
 
-        // 3. Pick a random fact
+        // 3. Pick random fact for WIN screen
         string randomFact = beeFacts[Random.Range(0, beeFacts.Length)];
-        if (factText != null) factText.text = "\"" + randomFact + "\"";
+
+        // <--- THIS IS THE FIX: Update the WIN text, not the lose text
+        if (winFactText != null) winFactText.text = "\"" + randomFact + "\"";
 
         // 4. Show Win Screen
-        winPanel.SetActive(true);
-
-
+        if (winPanel != null) winPanel.SetActive(true);
     }
+
     public void RestartGame()
     {
-        // Unpause time
         Time.timeScale = 1f;
-
-        // Reload the current level 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()
     {
-        // Unpause time
         Time.timeScale = 1f;
-
-        // Quit application
         Debug.Log("Quitting Game...");
         Application.Quit();
     }

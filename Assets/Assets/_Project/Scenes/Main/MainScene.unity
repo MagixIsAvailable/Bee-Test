@@ -13393,7 +13393,7 @@ MonoBehaviour:
   waterText: {fileID: 1375337606}
   pollenGoal: 50
   winPanel: {fileID: 146484581}
-  maxPollenCapacity: 50
+  maxPollenCapacity: 10
   playerBee: {fileID: 1782841844}
 --- !u!4 &2077456043
 Transform:
@@ -13508,7 +13508,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 340926409}
   winPanel: {fileID: 146484581}
-  factText: {fileID: 872148709}
+  loseFactText: {fileID: 872148709}
+  winFactText: {fileID: 2039142508}
 --- !u!4 &2106268276
 Transform:
   m_ObjectHideFlags: 0
