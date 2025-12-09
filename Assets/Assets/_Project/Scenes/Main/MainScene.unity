@@ -11310,7 +11310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1884598846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11615,7 +11615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: 464}
+  m_AnchoredPosition: {x: -9, y: 515}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933766627
@@ -12137,7 +12137,7 @@ GameObject:
   - component: {fileID: 2001666173}
   - component: {fileID: 2001666172}
   m_Layer: 5
-  m_Name: ExhoustedText (1)
+  m_Name: ControllsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12159,7 +12159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: 326}
+  m_AnchoredPosition: {x: 391, y: 305}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2001666172
@@ -12183,18 +12183,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "_______________________________________________________\r\n|                                                    
-    \t\t\t\t\t\t  |\r\n|   FLIGHT CONTROLS                                     |\r\n|                                                      
-    |\r\n|        [ W ]                  (  |  )                 |\r\n|     [A][
-    S ][D]                \\ _ /                  |\r\n|                              
-    [MOUSE]                 |\r\n|                                                      
-    |\r\n|    W : Forward               LOOK : Steer / Turn      |\r\n|    S : Backward                                      
-    |\r\n|    A : Strafe Left                                    |\r\n|    D : Strafe
-    Right                                   |\r\n|                                                      
-    |\r\n| _____________________________________________________ |\r\n|                                                      
-    |\r\n|    ELEVATION                                          |\r\n|                                                      
-    |\r\n|    [ SPACE ]  :  Fly UP    (Ascend)                   |\r\n|    [ SHIFT
-    ]  :  Fly DOWN  (Descend)                  |\r\n|    [ CTRL  ]  :  BOOST    
-    (Sprint)                   |\r\n|_______________________________________________________|"
+    \t\t\t\t\t\t  \r\n|   FLIGHT CONTROLS                                     \r\n|                                                      
+    \r\n|        [ W ]                  (  |  )                 \n|     [A][ S ][D]               
+    \\ _ /                  \r\n|                               [MOUSE]                
+    \r\n|                                                       \r\n|    W : Forward              
+    LOOK : Steer / Turn      \r\n|    S : Backward                                      
+    \r\n|    A : Strafe Left                                    \r\n|    D : Strafe
+    Right                                   \r\n|                                                      
+    \n| _____________________________________________________ \r\n|                                                      
+    \r\n|    ELEVATION                                          \r\n|                                                      
+    \r\n|    [ SPACE ]  :  Fly UP    (Ascend)                   \r\n|    [ SHIFT
+    ]  :  Fly DOWN  (Descend)                  \r\n|    [ CTRL  ]  :  BOOST     (Sprint)                  
+    \r\n|_______________________________________________________"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
