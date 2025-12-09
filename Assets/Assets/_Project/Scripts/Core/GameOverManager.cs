@@ -16,7 +16,6 @@ public class GameOverManager : MonoBehaviour
 
 
     [Header("Data")]
-    // Paste our fact list here!
     private string[] beeFacts = new string[]
     {
         "Honey bees fly about 15 mph—faster than most people can run!",
