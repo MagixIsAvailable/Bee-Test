@@ -28,6 +28,21 @@ public class GameOverManager : MonoBehaviour
         "Bees perform a 'waggle dance' to share map coordinates.",
         "Honey never spoils; 3,000-year-old honey is still edible!",
         "Male bees (drones) have no stingers and do no work."
+        "Bees have 5 eyes: two large compound eyes and three simple eyes (ocelli).",
+        "A single bee produces only 1/12th of a teaspoon of honey in her lifetime.",
+        "Bees can recognize individual human faces.",
+        "Bees communicate using pheromones (scents) as well as dancing.",
+        "Only female bees have stingers; males cannot sting.",
+        "Honey bees are the only insect that produces food eaten by humans.",
+        "Bees pollinate 80% of the world's flowering crops.",
+        "A bee's brain is the size of a sesame seed, yet they can learn and remember.",
+        "Bees can sense the electric field of a flower to tell if it has nectar.",
+        "During winter, bees huddle in a ball to keep the queen warm at 93°F (34°C).",
+        "Bees have been producing honey for at least 150 million years.",
+        "A colony can contain up to 60,000 bees at its peak.",
+        "Bees sleep! They take naps in the hive to consolidate memories.",
+        "If the queen dies, workers can create a new queen by feeding a larva 'Royal Jelly'.",
+        "Bees are not aggressive; they usually only sting to defend their hive."
     };
 
     public void TriggerGameOver()
