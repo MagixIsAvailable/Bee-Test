@@ -42,7 +42,7 @@ public class GameOverManager : MonoBehaviour
         "A colony can contain up to 60,000 bees at its peak.",
         "Bees sleep! They take naps in the hive to consolidate memories.",
         "If the queen dies, workers can create a new queen by feeding a larva 'Royal Jelly'.",
-        "Bees are not aggressive; they usually only sting to defend their hive."
+        "Bees are not aggressive; they usually only sting to defend their hive.",
     };
 
     public void TriggerGameOver()
