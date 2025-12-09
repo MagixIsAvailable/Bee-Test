@@ -27,7 +27,7 @@ public class GameOverManager : MonoBehaviour
         "Worker bees effectively work themselves to death in 6 weeks during summer.",
         "Bees perform a 'waggle dance' to share map coordinates.",
         "Honey never spoils; 3,000-year-old honey is still edible!",
-        "Male bees (drones) have no stingers and do no work."
+        "Male bees (drones) have no stingers and do no work.",
         "Bees have 5 eyes: two large compound eyes and three simple eyes (ocelli).",
         "A single bee produces only 1/12th of a teaspoon of honey in her lifetime.",
         "Bees can recognize individual human faces.",
