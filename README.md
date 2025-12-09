@@ -14,6 +14,7 @@ Click the button below to submit your feedback. It goes directly to a form (no a
 
 ## 🎮 Gameplay Overview
 **Survive the Meadow. Fill the Hive.**
+![Main Menu](Assets/Documentation_Images/screenshot_gameplay.jpg)
 
 Take flight as a tiny bee in a massive world. The Bee is a relaxing yet strategic flying game where you explore a lush, dangerous meadow.
 
