@@ -43,7 +43,7 @@ Take flight as a tiny bee in a massive world. The Bee is a relaxing yet strategi
 *   **Immersive Audio**  
     Features procedural engine sounds (pitch-shifting based on velocity) and 3D spatial audio for landmarks.
 
-![Hero Tree](Assets/Assets/_Project/GIT_IMAGES-README/HeroTreeSound.png)
+![Hero Tree](Assets/Assets/_Project/GIT_IMAGES-README/heroTreeSound.png)
 
 *   **Universal Render Pipeline (URP)**  
     Utilizes custom shaders for wind-affected vegetation and macro-style depth of field.
