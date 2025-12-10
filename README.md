@@ -1,9 +1,10 @@
 # 🐝 The Bee / Exhousted
 > **A 4th-Year University Game Development Assignment**
+![Intro Image](Assets/Assets/_Project/GIT_IMAGES-README/Intro.png)
 
 **The Bee** is a 3D rogue-lite flight simulator that explores the life of a honey bee through physics-based gameplay. Players must balance risk vs. reward by managing flight stamina (nectar) and inventory weight (pollen) while navigating a semi-procedural meadow environment.
 
-![Intro Image](Assets/Assets/_Project/GIT_IMAGES-README/Intro.png)
+
 ---
 
 ### 🎮 Help Me Test!
