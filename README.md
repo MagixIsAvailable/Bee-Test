@@ -14,7 +14,7 @@ Click the button below to submit your feedback. It goes directly to a form (no a
 ---
 
 ## 🎮 Gameplay Overview
-                    **Survive the Meadow. Fill the Hive.**
+**Survive the Meadow. Fill the Hive.**
 
 ![In Game Image](Assets/Assets/_Project/GIT_IMAGES-README/ingame.png)
 ---
