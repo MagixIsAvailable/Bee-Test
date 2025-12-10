@@ -114,8 +114,5 @@ Joshua Pearson (2020) JP Environmental Asset Pack. Available at: https://assetst
 * **Sound Effects:** 
 BBC (2024) BBC Rewind: Sound Effects. Available at: https://sound-effects.bbcrewind.co.uk/ (Accessed: 05 December 2025).
 
-### 🛠️ Tools & Tech
-* **Engine:** Unity 2022.3 LTS
-* **IDE:** Visual Studio Code
 * **AI Assistance:** Code debugging and documentation support provided by Google Gemini.
 Google (2024) Gemini. Available at: https://gemini.google.com/ (Accessed: 05 December 2025).
