@@ -3,6 +3,7 @@
 
 **The Bee** is a 3D rogue-lite flight simulator that explores the life of a honey bee through physics-based gameplay. Players must balance risk vs. reward by managing flight stamina (nectar) and inventory weight (pollen) while navigating a semi-procedural meadow environment.
 
+![Intro Image](Assets/Assets/_Project/GIT_IMAGES-README/Intro.png)
 ---
 
 ### 🎮 Help Me Test!
@@ -15,7 +16,8 @@ Click the button below to submit your feedback. It goes directly to a form (no a
 ## 🎮 Gameplay Overview
                     **Survive the Meadow. Fill the Hive.**
 
-![Intro Image](Assets/Assets/_Project/GIT_IMAGES-README/Intro.png)
+![In Game Image](Assets/Assets/_Project/GIT_IMAGES-README/ingame.png)
+---
 
 Take flight as a tiny bee in a massive world. The Bee is a relaxing yet strategic flying game where you explore a lush, dangerous meadow.
 
