@@ -58,8 +58,7 @@ This project was built and compiled using professional standard tools to ensure 
 * **Compiler:** Inno Setup 6.2 (Standard Windows Installer)
 * **Virus Scan:** 0/60 Verified Clean via VirusTotal.
     * *Note: Windows SmartScreen may flag the installer as "Unknown" because it is not digitally signed. This is normal for student projects.*
-    * [View Virus Scan Screenshot]
-    (Assets/Assets/_Project/GIT_IMAGES-README/virus_totalscan.png)
+    * [View Virus Scan Screenshot](Assets/Assets/_Project/GIT_IMAGES-README/virus_totalscan.png)
 
 ### ⚠️ False Positives
 Some smaller antivirus engines may flag the "Input System" as generic suspicious behavior because the game listens for key presses (WASD). This is a known false positive for Unity games.
