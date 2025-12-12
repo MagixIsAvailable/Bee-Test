@@ -27,7 +27,7 @@ Take flight as a tiny bee in a massive world. The Bee is a relaxing yet strategi
 *   **Manage Your Fuel:** Nectar is your stamina. Run out, and you're grounded.
 *   **Macro World:** Experience the world from a bug's eye view with immersive depth-of-field visuals and spatial sound.
 
----
+-[![Watch the Tutorial](https://img.youtube.com/vi/kQIm7UpGAts/0.jpg)](https://www.youtube.com/watch?v=kQIm7UpGAts)--
 
 ## 🔑 Key Features
 
